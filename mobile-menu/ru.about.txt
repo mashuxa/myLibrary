@@ -1,0 +1,34 @@
+В html//
+
+1. Подключите все файлы: css, js
+
+2. Сразу после <body> вставьте:
+   
+   <input id="js-mobile-menu-toggle" type="checkbox">
+
+3. Где необходимо добавьте переключатель меню:
+  
+   <label class="js-mobile-menu-toggle" for="js-mobile-menu-toggle">Menu</label> 
+
+
+
+
+В js//
+
+Проинициализируйте меню в своём js файле (mobile-menu.js подключать до своего js файла!):
+
+
+Пример:
+
+initializeMobileMenu(768, ".user-menu", ".user-menu-wrapper", true);
+
+
+Принимает необязательные параметры(все необязательные):
+//initializeMobileMenu( breakPoint, menuSelector, menuParentSelector, isInsertInStart);
+
+breakPoint - break point (px не казываются, только число!) на котором менюшка сворачивается (по умолчанию - 768, number); // при изменении break point также необходимо изменить в mobile-menu.less
+menuSelector - селектор дополнительной менюшки, которую нужно переместить также в боковое меню("string");
+menuParentSelector - родитель menuSelector, в который необходимо вернуть доп. меню после увеличения экрана("string");
+isInsertInStart - вставить доп. меню в начало или конец бокового меню (по умолчанию true - в начало, boolean);
+
+

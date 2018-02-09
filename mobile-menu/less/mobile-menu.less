@@ -1,0 +1,23 @@
+// out: ../css/mobile-menu.css 
+@break-point: 768px;
+.js-mobile-menu-toggle,
+#js-mobile-menu-toggle {
+    display: none;
+}
+
+@media all and (max-width: @break-point) {
+    .js-mobile-menu-toggle {
+        display: inline-block;
+    }
+    .js-mobile-menu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-110%);
+    }
+    #js-mobile-menu-toggle:checked ~ .js-mobile-menu,
+    #js-mobile-menu-toggle:checked ~ * .js-mobile-menu {
+        transform: translateX(0);
+    }
+}
