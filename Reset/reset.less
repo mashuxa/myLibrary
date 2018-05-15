@@ -1,0 +1,54 @@
+//MIXIN IN LESS
+.placeholder(@placeholder-color) {
+    ::-webkit-input-placeholder {
+        color: @placeholder-color;
+    }
+    ::-moz-placeholder {
+        color: @placeholder-color;
+    }
+    :-moz-placeholder {
+        color: @placeholder-color;
+    }
+    :-ms-input-placeholder {
+        color: @placeholder-color;
+    }
+}
+
+//Remove arrow in select
+select {
+    cursor: pointer;
+    appearance: none !important;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none; 
+    &::-ms-expand {display: none;}
+}
+
+//Remove arrows in input[type="number"]
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    margin: 0; 
+}
+//Clearfix for float block
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+//Custom ienumerable list
+ol {
+    counter-reset: olCounter;
+    list-style: none;
+    padding-left: 0;
+    & > li:before {
+        font-size: inherit;
+        color: inherit;
+        background-color: inherit;
+        counter-increment: olCounter;
+        content: counter(olCounter)".";
+        display: inline-block;
+        padding-right: 5px;
+    }
+}

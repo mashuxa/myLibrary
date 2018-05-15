@@ -1,0 +1,11 @@
+.tabs {
+    [name="tabs"],
+    .tab {display: none;}
+    &__wrapper {}
+    &__content {} 
+    #tab1:checked ~ .tabs__content .tab1,
+    #tab2:checked ~ .tabs__content .tab2,
+    #tab3:checked ~ .tabs__content .tab3 {
+        display: block; 
+    }
+}  
