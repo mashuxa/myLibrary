@@ -1,7 +1,7 @@
 //Script use es6. You can use "babeljs" for es5.
 //Use tag "tpl" (or raplace it in constant "TAG") 
 //with attribute "src='hereTemplateSrc'".
-//For example <tpl defer src="components/header.html"><tpl>
+//For example <tpl src="components/header.html"><tpl>
 //And include this script in header 
 //with attribute "defer" before all scripts.
 (function () {
