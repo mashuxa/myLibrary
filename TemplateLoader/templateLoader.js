@@ -26,12 +26,21 @@
             };
         });
     }
-    let tpls = document.getElementsByTagName(TAG);
-    for (let i = 0; i < tpls.length; i++) {
-        let src = tpls[0].getAttribute(ATTRIBUTE);
-        getHTML(src).then(content => {
-            tpls[0].insertAdjacentHTML('beforebegin', content);
-            tpls[0].parentNode.removeChild(tpls[0]);
-        });
+
+    function replaceAllTags() {
+        let templTag = document.getElementsByTagName(TAG)[0];
+        if (templTag) {
+            let src = templTag.getAttribute(ATTRIBUTE);
+            getHTML(src).then(content => {
+                templTag.insertAdjacentHTML('beforebegin', content);
+            }).then(() => {
+                templTag.parentNode.removeChild(templTag);
+                replaceAllTags();
+            });
+        }
+        else {
+            return;
+        }
     }
+    replaceAllTags();
 }());
