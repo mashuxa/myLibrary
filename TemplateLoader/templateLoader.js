@@ -26,7 +26,6 @@
             };
         });
     }
-
     function replaceAllTags() {
         let templTag = document.getElementsByTagName(TAG)[0];
         if (templTag) {
